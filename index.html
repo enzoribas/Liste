@@ -912,7 +912,25 @@
                     {Object.entries(stats.parPersonne).length > 0 && (
                       <div style={{ background: style.cardMuted, padding: 12, borderRadius: 10, textAlign: "center" }}>
                         <div style={{ fontSize: 13, fontWeight: 500 }}>{Object.entries(stats.parPersonne).map(([k, v]) => `${k}: ${v}`).join(" · ")}</div>
-                        <div style={{ fontSize: 11.5, color: style.sub, marginTop: 2 }}>Par personne</div>
+                        <div style={{ fontSize: 11.5, color: style.sub, marginTop: 2 }}>Par personne (nb)</div>
+                      </div>
+                    )}
+                    {Object.keys(stats.prixParPersonne).length > 0 && (
+                      <div style={{ background: style.cardMuted, padding: 12, borderRadius: 10, textAlign: "center" }}>
+                        <div style={{ fontSize: 13, fontWeight: 500 }}>{Object.entries(stats.prixParPersonne).map(([k, v]) => `${k}: ${v.toFixed(2)}€`).join(" · ")}</div>
+                        <div style={{ fontSize: 11.5, color: style.sub, marginTop: 2 }}>Budget par personne</div>
+                      </div>
+                    )}
+                    {Object.keys(stats.parCategorie).length > 0 && (
+                      <div style={{ background: style.cardMuted, padding: 12, borderRadius: 10, textAlign: "center" }}>
+                        <div style={{ fontSize: 13, fontWeight: 500 }}>{Object.entries(stats.parCategorie).map(([k, v]) => `${k}: ${v}`).join(" · ")}</div>
+                        <div style={{ fontSize: 11.5, color: style.sub, marginTop: 2 }}>Catégories</div>
+                      </div>
+                    )}
+                    {Object.keys(stats.parStatut).length > 0 && (
+                      <div style={{ background: style.cardMuted, padding: 12, borderRadius: 10, textAlign: "center" }}>
+                        <div style={{ fontSize: 13, fontWeight: 500 }}>{Object.entries(stats.parStatut).map(([k, v]) => `${STATUT_LABEL[k] || k}: ${v}`).join(" · ")}</div>
+                        <div style={{ fontSize: 11.5, color: style.sub, marginTop: 2 }}>Statuts</div>
                       </div>
                     )}
                   </div>
